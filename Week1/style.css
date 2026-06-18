@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  background-image: url(img.avif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #ffffff;
+}
+
+.main {
+  background-color: rgba(24, 24, 24, 0.95); 
+  width: 400px;
+  min-height: 580px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  overflow: hidden; 
+  display: flex;
+  flex-direction: column;
+}
+
+.image-container {
+  width: 100%;
+  height: 200px;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 35px;
+  flex-grow: 1;
+}
+
+.form-title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 25px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  color: #f3f4f6;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.fields {
+  width: 100%;
+  height: 48px;
+  font-size: 15px;
+  background-color: #1e1e1e;
+  border: 1px solid #333333;
+  color: #ffffff;
+  border-radius: 8px; 
+  padding: 0 16px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.fields:hover {
+  border-color: #444444;
+}
+
+.fields:focus {
+  border-color: #800020; 
+  background-color: #252525;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -5px;
+  margin-bottom: 20px;
+}
+
+.forgot-link {
+  color: #a3a3a3;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.forgot-link:hover {
+  color: #ff3366; 
+  text-decoration: underline;
+}
+
+.buttons {
+  margin-top: 15px;
+  height: 48px;
+  width: 100%; 
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  border-radius: 8px;
+  border: none;
+  background-color: #800020; 
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.buttons:hover {
+  background-color: #990026;
+}
+
+.buttons:active {
+  transform: scale(0.98);
+}
