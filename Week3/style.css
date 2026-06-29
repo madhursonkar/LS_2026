@@ -1,0 +1,302 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at top left, #15171c, #0a0b0e 70%);
+}
+
+.main {
+  width: min(900px, 100%);
+  height: min(90vh, 850px);
+  display: flex;
+  flex-direction: column;
+  background: #14161b;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6);
+}
+
+.header {
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f5f5f5;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  background: linear-gradient(90deg, #1a1c22, #20232b);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.input {
+  display: flex;
+  gap: 15px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.015);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+#task {
+  flex: 1;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  outline: none;
+  border-radius: 10px;
+  padding: 0 18px;
+  background: #1c1f26;
+  color: #e5e7eb;
+  font-size: 16px;
+  transition: 0.25s;
+}
+
+#task::placeholder {
+  color: #6b7280;
+}
+
+#task:focus {
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+#add {
+  width: 120px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #f5f5f5;
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #4f46e5, #4338ca);
+  transition: 0.25s;
+}
+
+#add:hover {
+  background: linear-gradient(135deg, #5b52f0, #4f46e5);
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.35);
+}
+
+#add:active {
+  filter: brightness(0.9);
+}
+
+.task-space {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.task-space-main {
+  width: 100%;
+  padding: 18px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #3a3d44 transparent;
+}
+
+.task-space-main::-webkit-scrollbar {
+  width: 8px;
+}
+
+.task-space-main::-webkit-scrollbar-thumb {
+  background: #3a3d44;
+  border-radius: 20px;
+}
+
+.task-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 60px;
+  margin-bottom: 14px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: #1a1c22;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: 0.25s;
+  animation: pop 0.25s ease;
+}
+
+.task-box:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+}
+
+.paragraph {
+  flex: 1;
+  color: #e5e7eb;
+  font-size: 17px;
+  overflow-wrap: anywhere;
+}
+
+.edit-input {
+  flex: 1;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  outline: none;
+  border-radius: 8px;
+  padding: 0 12px;
+  background: #1c1f26;
+  color: #e5e7eb;
+  font-size: 16px;
+}
+
+.edit-input:focus {
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.edit-button,
+.delete-button {
+  width: 90px;
+  height: 38px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #f5f5f5;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+.edit-button {
+  background: #15803d;
+}
+
+.edit-button:hover {
+  background: #16a34a;
+  box-shadow: 0 8px 18px rgba(22, 163, 74, 0.3);
+}
+
+.delete-button {
+  background: #b91c1c;
+}
+
+.delete-button:hover {
+  background: #dc2626;
+  box-shadow: 0 8px 18px rgba(220, 38, 38, 0.3);
+}
+
+.edit-button:active,
+.delete-button:active {
+  filter: brightness(0.85);
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 12px;
+  }
+
+  .main {
+    width: 100%;
+    height: 95vh;
+  }
+
+  .header {
+    height: 65px;
+    font-size: 22px;
+  }
+
+  .input {
+    flex-direction: column;
+  }
+
+  #task,
+  #add {
+    width: 100%;
+  }
+
+  #add {
+    height: 48px;
+  }
+
+  .task-box {
+    flex-wrap: wrap;
+  }
+
+  .paragraph,
+  .edit-input {
+    width: 100%;
+  }
+
+  .edit-button,
+  .delete-button {
+    flex: 1;
+    min-width: 110px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    font-size: 20px;
+  }
+
+  .paragraph {
+    font-size: 15px;
+  }
+
+  .edit-button,
+  .delete-button {
+    height: 36px;
+    font-size: 14px;
+  }
+}
+
+.task-box:has(.steps-list) {
+  flex-direction: column;
+  align-items: stretch; 
+  gap: 16px;
+  padding: 22px 24px;
+}
+
+.task-title {
+  color: #818cf8;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  letter-spacing: 0.5px;
+}
+
+.steps-list {
+  color: #d1d5db; 
+  margin: 0;
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.steps-list li {
+  padding-left: 4px;
+}
+
+.task-box:has(.steps-list) .delete-button {
+  align-self: flex-end;
+  width: auto;          
+  padding: 0 16px;      
+  margin-top: 4px;
+}
